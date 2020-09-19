@@ -25,3 +25,5 @@ hs_err_pid*
 /JSFPrimerosPasos/build/
 /bin/
 /JSFPrimerosPasos/dist/
+/DataTable/nbproject/private/
+/DataTable/build/
