@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
+    </h:head>
+    <h:body>
+        <div class="panel panel-primary" style="width: 50%">
+            <div class="panel-heading">
+                <h3 class="panel-title">Ingreso al sistema</h3>
+            </div>
+            <div class="panel-body">
+                <h:form id="login">
+                    <h:panelGroup layout="block" class="alert alert-#{loginBean.msgClass}" id="prueba">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        <span class="sr-only">Error</span>
+                        <h:outputLabel id="msg" value="#{loginBean.message}"></h:outputLabel>
+                    </h:panelGroup>
+                    
+                    <div class="form-group">
+                        <h:outputLabel>
+                            Usuario
+                        </h:outputLabel>
+                        <h:inputText id="usuario" class="form-control" value="#{loginBean.username}" required="true"></h:inputText>
+                    </div>
+                    
+                    <div class="form-group">
+                        <h:outputLabel>
+                            password
+                        </h:outputLabel>
+                        <h:inputText id="password" class="form-control" value="#{loginBean.password}" required="true"></h:inputText>
+                        <h:message for="password" id="passwordMsg"></h:message>
+                        
+                        <f:ajax render="msg" execute="usuario password">
+                            <h:commandButton value="Login" class="btn btn-primary" action="#{loginBean.doLogin()}"></h:commandButton>
+                        </f:ajax>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+        
+        <script src="bootstrap/js/bootstrap.js"></script>
+    </h:body>
+</html>
+
