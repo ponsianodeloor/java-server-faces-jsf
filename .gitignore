@@ -29,3 +29,5 @@ hs_err_pid*
 /DataTable/build/
 /LoginCrud/nbproject/private/
 /LoginCrud/build/
+/JSFLoginMVC/nbproject/private/
+/JSFLoginMVC/build/
